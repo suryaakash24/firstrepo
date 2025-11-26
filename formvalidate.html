@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Signup Form — HTML5 Validation</title>
+  <style>
+    /* Minimal styling for readability */
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; padding: 2rem; }
+    form { max-width: 420px; margin: 0 auto; display: grid; gap: 0.75rem; }
+    label { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+    input { width: 100%; padding: 0.5rem; font-size: 1rem; box-sizing: border-box; }
+    .hint { font-size: 0.85rem; color: #555; }
+    button { padding: 0.6rem 1rem; font-size: 1rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h1>Sign up</h1>
+
+  <form action="#" method="post" autocomplete="on">
+    <!-- Name (required) -->
+    <div>
+      <label for="name">Name</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        required
+        placeholder="Your full name"
+        autocomplete="name"
+      />
+      <div class="hint">Required</div>
+    </div>
+
+    <!-- Email (required, valid email format) -->
+    <div>
+      <label for="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        placeholder="you@example.com"
+        autocomplete="email"
+      />
+      <div class="hint">Required — must be a valid email address</div>
+    </div>
+
+    <!-- Password (minimum 6 characters) -->
+    <div>
+      <label for="password">Password</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        required
+        minlength="6"
+        placeholder="At least 6 characters"
+        autocomplete="new-password"
+      />
+      <div class="hint">Required — minimum 6 characters</div>
+    </div>
+
+    <!-- Submit -->
+    <div>
+      <button type="submit">Create account</button>
+    </div>
+  </form>
+
+</body>
+</html>
