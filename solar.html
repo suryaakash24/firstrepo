@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>solar system</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sun"></div>
+        
+
+        <div class="orbit orbit1"></div>
+        <div class="planet1-container">
+            <div class="planet1"></div>
+        </div>
+
+        <div class="orbit orbit2"></div>
+        <div class="planet2-container">
+            <div class="planet2"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;      
+  align-items: center;
+  background-color: rgb(92, 81, 168);
+}
+.container{
+    position: relative;
+    height: 600px;
+    width: 600px;
+}
+.sun{
+    position: absolute;
+    height:90px;
+    width: 90px;
+    border-radius: 50%; 
+    top: 50%;
+    left: 50%;
+    background-image: url('https://tse3.mm.bing.net/th/id/OIP.l64CaY8AHwrzQlgV4l3luAHaD5?r=0&cb=thfvnext&w=1103&h=580&rs=1&pid=ImgDetMain&o=7&rm=3');
+    background-size: cover;
+    background-position: center;
+    transform: translate(-50%, -50%);
+}
+.orbit{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: black;
+    border: 3px solid black;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+}
+.orbit1{
+    height: 400px;
+    width: 400px;
+}
+.planet1-container{
+    height: 0;
+    width: 0;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    animation: rotate1 6s linear infinite;
+}
+.planet1{
+    height: 50px;
+    width: 50px;
+    top: -15px;
+    left: 30px;
+    border-radius: 50%;
+    background-image: url('https://tse1.mm.bing.net/th/id/OIP.VN8zPwFOF-lJc4LJZRxoHQHaHa?r=0&cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3');
+    background-size: cover;
+    position: absolute;
+    transform: translateX(145px);
+}
+.orbit2{
+    height: 700px;
+    width: 700px;
+}
+.planet2-container{
+    height: 0;
+    width: 0;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    animation: rotate2 12s linear infinite;
+}
+.planet2{
+    height: 70px;
+    width: 70px;
+    top: -75px;
+    left: 60px;
+    border-radius: 50%;
+    background-image: url(" c:\Users\surya\Downloads\sun.jpeg");
+    background-size: cover;
+    position: absolute;
+    transform: translateX(250px);
+}
+@keyframes rotate1 {
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+@keyframes rotate2 {
+    100%{
+        transform: rotate(360deg);
+    }
+}
