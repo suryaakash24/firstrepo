@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Rocket Animation</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background: skyblue;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+
+      .rocket {
+        width: 100px;
+        animation: launch 5s linear infinite;
+      }
+
+      @keyframes launch {
+        0% {
+          transform: translateY(0);
+        }
+
+        100% {
+          transform: translateY(-100vh);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- You can replace with your own rocket image -->
+    <img
+      src="image.png"
+      alt="Rocket"
+      class="rocket"
+    />
+  </body>
+</html>
