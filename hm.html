@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Room Manager</title>
+</head>
+<body>
+
+<h2>Hotel Room Manager</h2>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <td>Room Number</td>
+        <td><input id="roomNumber"></td>
+    </tr>
+
+    <tr>
+        <td>Room Type</td>
+        <td><input id="roomType"></td>
+    </tr>
+
+    <tr>
+        <td>Price per Night</td>
+        <td><input id="roomPrice" type="number"></td>
+    </tr>
+
+    <tr>
+        <td>Status</td>
+        <td>
+            <select id="roomAvailable">
+                <option value="Available">Available</option>
+                <option value="Booked">Booked</option>
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <th colspan="2">
+            <button onclick="addRoom()">Add Room</button>
+        </th>
+    </tr>
+</table>
+
+<h3>Room List</h3>
+<div id="roomList"></div>
+
+<script>
+let rooms = [];
+
+function addRoom() {
+    const num = document.getElementById("roomNumber").value;
+    const type = document.getElementById("roomType").value;
+    const price = document.getElementById("roomPrice").value;
+    const available = document.getElementById("roomAvailable").value;
+
+    if (num === "" || type === "" || price === "") {
+        alert("Please enter all fields!");
+        return;
+    }
+
+    rooms.push({
+        number: num,
+        type: type,
+        price: price,
+        available: available
+    });
+
+    display();
+}
+
+function display() {
+    let list = document.getElementById("roomList");
+    list.innerHTML = "";
+
+    rooms.forEach(room => {
+        list.innerHTML +=
+            "<table border='1' cellpadding='8' bgcolor='lightgreen'>" +
+            "<tr><td><b>Room No:</b></td><td>" + room.number + "</td></tr>" +
+            "<tr><td>Type:</td><td>" + room.type + "</td></tr>" +
+            "<tr><td>Price:</td><td>" + room.price + "</td></tr>" +
+            "<tr><td>Status:</td><td>" + room.available + "</td></tr>" +
+            "</table><br>";
+    });
+}
+</script>
+
+</body>
+</html>
