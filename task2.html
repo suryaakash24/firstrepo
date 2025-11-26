@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Ranking</title>
+  <link rel="stylesheet" href="style.css">
+  <style>body{
+  font-family: Arial;
+  padding:20px;
+}
+
+#search{
+  padding:8px;
+  width:250px;
+  border-radius:6px;
+  margin-bottom:10px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th, td{
+  border:1px solid #ccc;
+  padding:8px;
+  text-align:center;
+}
+
+thead th{
+  position:sticky;
+  top:0;
+  background:#333;
+  color:white;
+}
+
+tbody tr:nth-child(even){
+  background:#f2f2f2;
+}
+
+tbody tr:hover{
+  background:#d7eaff;
+}
+
+#rankBtn{
+  margin-top:10px;
+  padding:8px 12px;
+  background:#007bff;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}</style>
+</head>
+<body>
+
+<h2>Student Ranking Page</h2>
+
+<input id="search" type="text" placeholder="Search...">
+
+<table>
+  <thead>
+    <tr>
+      <th>Roll No</th>
+      <th>Name</th>
+      <th>Marks</th>
+      <th>Rank</th>
+    </tr>
+  </thead>
+
+  <tbody id="tableBody">
+    <tr><td>101</td><td>Amit</td><td contenteditable="true">89</td><td>-</td></tr>
+    <tr><td>102</td><td>Suman</td><td contenteditable="true">76</td><td>-</td></tr>
+    <tr><td>103</td><td>Rohit</td><td contenteditable="true">92</td><td>-</td></tr>
+    <tr><td>104</td><td>Neha</td><td contenteditable="true">67</td><td>-</td></tr>
+  </tbody>
+</table>
+
+<button id="rankBtn">Calculate Rank</button>
+
+<script src="script.js"></script>
+</body>
+</html>
